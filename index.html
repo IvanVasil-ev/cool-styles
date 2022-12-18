@@ -20,7 +20,12 @@
     <div class="title">
       <h1>Projects</h1>
       <div class="controlls">
-        <a class="btn" href="new-project.html">New project</a>
+        <div id="new-project" class="tooltip-link">
+          <a class="btn" href="new-project.html">
+            New project
+          </a>
+          <span id="new-project-tooltip" class="tooltip">Create new project</span>
+        </div>
       </div>
     </div>
     <div class="br"></div>
@@ -31,10 +36,22 @@
       </ul>
       <div class="search">
         <input type="search" class="input" placeholder="Search by name" spellcheck="false" />
-        <div>
-          <button class="dropdown" type="button">
+        <div class="dropdown-wrapper">
+          <button id="dropdown" class="dropdown" type="button">
             <span>Name</span>
+            <svg fill="#333238" width="12px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              viewBox="0 0 512.011 512.011" style="enable-background:new 0 0 512.011 512.011;" xml:space="preserve">
+              <path d="M505.755,123.592c-8.341-8.341-21.824-8.341-30.165,0L256.005,343.176L36.421,123.592c-8.341-8.341-21.824-8.341-30.165,0
+                s-8.341,21.824,0,30.165l234.667,234.667c4.16,4.16,9.621,6.251,15.083,6.251c5.462,0,10.923-2.091,15.083-6.251l234.667-234.667
+                C514.096,145.416,514.096,131.933,505.755,123.592z"/>
+            </svg>
           </button>
+          <ul class="dropdown-list">
+            <li class="dropdown-header">Sort by</li>
+            <li><a class="dropdown-item" href="#">Name</a></li>
+            <li><a class="dropdown-item" href="#">Views</a></li>
+            <li><a class="dropdown-item" href="#">Date</a></li>
+          </ul>
         </div>
       </div>
     </div>
