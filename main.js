@@ -1,19 +1,23 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const DROPDOWN_BTN = document.getElementById('dropdown');
   const NEW_PROJECT_BTN = document.getElementById('new-project');
   const NEW_PROJECT_TOOLIP = document.getElementById('new-project-tooltip');
 
-  DROPDOWN_BTN.addEventListener('click', (el) => {
-
-  });
-
   NEW_PROJECT_BTN.addEventListener('mouseenter', () => {
-    const { right } = NEW_PROJECT_TOOLIP.getBoundingClientRect();
-    if ((right + 15) > window.innerWidth) {
+    const { left, right } = NEW_PROJECT_TOOLIP.getBoundingClientRect();
+
+    console.log(right + 20, window.innerWidth, (right + 15) > window.innerWidth);
+
+    if ((right + 20) > window.innerWidth) {
       NEW_PROJECT_TOOLIP.style.right = '0px';
+      NEW_PROJECT_TOOLIP.style.left = 'unset';
+      NEW_PROJECT_TOOLIP.style.transform = 'unset';
+    } else if ((left - 20) < 0) {
+      NEW_PROJECT_TOOLIP.style.left = '0px';
+      NEW_PROJECT_TOOLIP.style.right = 'unset';
       NEW_PROJECT_TOOLIP.style.transform = 'unset';
     } else {
       NEW_PROJECT_TOOLIP.style.right = '50%';
+      NEW_PROJECT_TOOLIP.style.left = 'unset';
       NEW_PROJECT_TOOLIP.style.transform = 'translate(50%, 0)';
     }
   });
