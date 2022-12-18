@@ -16,6 +16,18 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+button:not(:disabled),
+a:not(:disabled) {
+  cursor: pointer;
+}
+
+button:disabled,
+a:disabled {
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.8;
+}
+
 .back-link {
   box-shadow: 0 0 4px 1px rgb(0 0 0 / 50%);
   border-radius: 50%;
@@ -93,16 +105,6 @@ h1 {
   text-decoration: none;
 }
 
-.btn:not(:disabled) {
-  cursor: pointer;
-}
-
-.btn:disabled {
-  box-shadow: none;
-  cursor: not-allowed;
-  opacity: 0.8;
-}
-
 .btn:not(:disabled):hover {
   background: #1068bf;
   box-shadow: inset 0 0 0 2px #064787, 0 2px 2px 0 rgb(0 0 0 / 8%);
@@ -119,6 +121,7 @@ h1 {
 }
 
 .tooltip {
+  z-index: 100;
   transition: opacity 300ms;
   position: absolute;
   top: calc(100% + 12px);
@@ -208,10 +211,6 @@ h1 {
   flex: 1;
 }
 
-.dropdown:not(:disabled):hover {
-  cursor: pointer;
-}
-
 .dropdown:not(:disabled):focus {
   box-shadow: 0 0 0 1px #fff, 0 0 0 3px #428fdc;
   outline: none;
@@ -247,7 +246,7 @@ h1 {
 
 .dropdown-header {
   color: #000;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   line-height: 16px;
   padding: 8px 12px;
@@ -269,6 +268,18 @@ h1 {
   overflow: hidden;
   text-align: left;
   width: 100%;
+}
+
+.dropdown-item:not(.checked) {
+  padding: 8px 37px;
+}
+
+.dropdown-item.checked {
+  display: flex;
+}
+
+.dropdown-item.checked svg {
+  margin-right: 10px;
 }
 
 .dropdown-item:not(:disabled):hover {
@@ -297,7 +308,6 @@ h1 {
   transition: box-shadow 100ms linear;
   text-decoration: none;
   background-color: transparent;
-  cursor: pointer;
   outline: none;
   height: 100%;
 }
